@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue - REST APIs with Axios</title>
+  </head>
+  <body>
+    <!-- This is the development version, includes helpful console warnings -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- This is the production version -->
+    <!--script src="https://cdn.jsdelivr.net/npm/vue"></script-->
+
+    <div id="root-div">
+        <h1>Original request</h1>
+        <p>{{ request }}</p>
+        <h2>Response</h2>
+        <p>{{ response }}</p>
+        <h2>Data</h2>
+        <p>{{ response.data }}</p>
+        <h2>Status</h2>
+        <p>{{ response.status }}</p>
+        <h2>Headers</h2>
+        <p>{{ response.headers }}</p>
+        <h2>Config</h2>
+        <p>{{ response.config }}</p>
+        <h2>EUR</h2>
+        <p>{{ response.data.bpi.EUR }}</p>
+        <h2>Currency</h2>
+        <p>
+          <ul>
+            <li v-for="currency in response.data.bpi">{{ currency.code }}</li>
+          </ul>
+        </p>
+
+      </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
